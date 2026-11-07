@@ -1,0 +1,21 @@
+intervals = [[1, 3], [2, 6], [8, 10], [15, 18]]
+
+intervals.sort()
+
+merged = [intervals[0]]
+
+for start, end in intervals[1:]:
+    last = merged[-1]
+
+    if start <= last[1]:
+        last[1] = max(last[1], end)
+    else:
+        merged.append([start, end])
+
+print(merged)
+
+
+
+
+
+"""[[1, 6], [8, 10], [15, 18]]"""
